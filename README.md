@@ -1,2 +1,4 @@
 # rock-paper-scissors
-he Odin Project - Rock, Paper, Scissors game
+The Odin Project - Rock, Paper, Scissors game
+
+https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors
