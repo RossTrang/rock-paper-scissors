@@ -1,8 +1,10 @@
 //  https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation
 
+const weapons = document.getElementsByClassName('weapon')
 const commentary = document.querySelector('#comment')
 const playerScore = document.querySelector('#playerScore')
 const pcScore = document.querySelector('#pcScore')
+const result = document.querySelector('.roundResult')
 
 let cpuChoice = '';
 let p1Score = 0;
@@ -11,30 +13,30 @@ let playerChoice = '';
 
 // use EventListeners for user input
 
-const weapons = document.getElementsByClassName('weapon')
-
 Array.from(weapons).forEach((weapon) => {
   weapon.addEventListener('click', (e) => {
     playerChoice = weapon.id; playRound(playerChoice, cpuChoice)
   });
 })
 
+result.onclick = () => result.style.display = 'none'
+
 
 function cpuPlayer() {
-  // use Math.random to generate a number 1-3
+  // use Math.random to generate a number 0-2
   // use switch cases to return choice
 
   cpuChoice = Math.floor(Math.random() * Math.floor(3));
 
   switch (cpuChoice) {
   case 0:
-    return cpuChoice = 'rock';
+    return cpuChoice = 'Rock';
     break;
   case 1:
-    return cpuChoice = 'paper';
+    return cpuChoice = 'Paper';
     break;
   case 2:
-    return cpuChoice = 'scissors';
+    return cpuChoice = 'Scissors';
     break;
   }
 }
@@ -46,15 +48,21 @@ function playRound() {
 
   cpuPlayer();
 
-  if (playerChoice === cpuChoice) {alert('Draw! Both players chose ' + playerChoice);
-    p1Score++; cpuScore++;}
-  else if (playerChoice.includes('ock') && cpuChoice.includes('ors'))
-  {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
-  else if (playerChoice.includes('ors') && cpuChoice.includes('per'))
-  {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
-  else if (playerChoice.includes('per') && cpuChoice.includes('ock'))
-  {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
-  else {alert('Computer wins! ' + cpuChoice + ' beats ' + playerChoice); cpuScore++}
+  if (playerChoice === cpuChoice) {
+    result.style.display = 'block';
+    result.textContent = 'Draw! Both players chose ' + playerChoice
+  }
+  else if ((playerChoice.includes('ock') && cpuChoice.includes('ors')) ||
+           (playerChoice.includes('ors') && cpuChoice.includes('per')) ||
+           (playerChoice.includes('per') && cpuChoice.includes('ock'))) {
+    result.style.display = 'block';
+    result.textContent = 'Player wins! ' + playerChoice + ' beats ' + cpuChoice;
+    p1Score++
+  }
+  else { result.style.display = 'block';
+    result.textContent = 'Computer wins! ' + cpuChoice + ' beats ' + playerChoice;
+    cpuScore++
+  }
 
   playerScore.textContent = p1Score + ' : Player';
   pcScore.textContent = 'CPU : ' + cpuScore;

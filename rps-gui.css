@@ -1,7 +1,7 @@
 body  {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: [header-start] 1fr [instructions-start] auto [gameboard-start] 3fr [scores-start] 1fr;
+  grid-template-rows: [header-start] 1fr [instructions-start] auto [gameboard-start] auto [scores-start] 1fr;
   grid-template-areas: 
         ".  header  header  header  ."
         ".  instructions  instructions  instructions  ."
@@ -16,14 +16,20 @@ body  {
 h2  {
   grid-area: header;
   justify-self: center;
+  text-align: center;
 }
 
 div {
-  border: 2px silver dotted;
+/*   border: 2px silver dotted;
+ */}
+
+img {
+  width: 90%;
 }
 
 .instructions {
   grid-area: instructions;
+  text-align: center;
   justify-self: center;
   align-self: start;
   font-size: 0.80em;
@@ -32,10 +38,9 @@ div {
 .gameboard {
   grid-area: gameboard;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-        ".  rock  paper scissors  .";
-  align-content: space-around;
-  grid-gap: 20px;
+        "rock paper scissors";
 }
 
 #rock {
@@ -59,6 +64,7 @@ div {
 #comment {
   grid-column: span 5;
   justify-self: center;
+  text-align: center;
 }
 
 #playerScore {
@@ -73,4 +79,12 @@ grid-column-start: 1;
 
 .roundResult {
   display: none;
+  grid-area: gameboard;
+  z-index: 10;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  background-color: black;
+  border: 3px lawngreen solid;
+  padding: 20px;
 }
