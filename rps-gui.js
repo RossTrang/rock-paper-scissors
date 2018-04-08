@@ -56,8 +56,8 @@ function playRound() {
   {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
   else {alert('Computer wins! ' + cpuChoice + ' beats ' + playerChoice); cpuScore++}
 
-  playerScore.textContent = p1Score;
-  pcScore.textContent = cpuScore;
+  playerScore.textContent = p1Score + ' : Player';
+  pcScore.textContent = 'CPU : ' + cpuScore;
 
   if (cpuScore === p1Score) {commentary.textContent = 'Are you even trying!?'}
   else if (cpuScore > p1Score + 2) {commentary.textContent = 'You\'re gettin\' an ass whuppin\', boy!'}

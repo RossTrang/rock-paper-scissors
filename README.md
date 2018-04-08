@@ -17,4 +17,4 @@ rps-gui.html goes a little further.
     - Update scores
     - Commentary field updated based on scores    
 
-TODO:   - Changes CSS to display result of round
+TODO:   - Changes CSS to display result of round(currently Alerts)
