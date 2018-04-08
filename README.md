@@ -14,7 +14,7 @@ rps-gui.html goes a little further.
   - CSS Grid for UI
   - rps-gui.js DOM manipulation
     - EventListeners added by ClassName for player selection
+    - Update scores
+    - Commentary field updated based on scores    
 
-TODO:   - Update scores
-        - Changes CSS to display result of round
-        - Commentary field updated based on scores
+TODO:   - Changes CSS to display result of round

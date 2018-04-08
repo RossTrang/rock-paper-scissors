@@ -1,6 +1,8 @@
 //  https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation
 
 const commentary = document.querySelector('#comment')
+const playerScore = document.querySelector('#playerScore')
+const pcScore = document.querySelector('#pcScore')
 
 let cpuChoice = '';
 let p1Score = 0;
@@ -54,8 +56,12 @@ function playRound() {
   {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
   else {alert('Computer wins! ' + cpuChoice + ' beats ' + playerChoice); cpuScore++}
 
+  playerScore.textContent = p1Score;
+  pcScore.textContent = cpuScore;
+
   if (cpuScore === p1Score) {commentary.textContent = 'Are you even trying!?'}
   else if (cpuScore > p1Score + 2) {commentary.textContent = 'You\'re gettin\' an ass whuppin\', boy!'}
   else if (p1Score > cpuScore + 1) {commentary.textContent = 'G\'awn wee man!!! Kick its ass!'}
+  else {commentary.textContent = 'Fight! Fight! Fight!'}
 }
 
