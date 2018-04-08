@@ -5,7 +5,7 @@ let p1Score = 0;
 let cpuScore = 0;
 let playerChoice = '';
 
-// DOM selections
+// use EventListeners for user input
 
 const weapons = document.getElementsByClassName('weapon')
 
@@ -36,38 +36,25 @@ function cpuPlayer() {
   }
 }
 
-/*function game() {
-  // play x5 rounds
-  // indicate overall winner
-
-  let i = 5;
-  while (i > 1) {
-    playRound(playerChoice, cpuChoice);
-
-    if (cpuScore === 2 && p1Score === 2) {alert('Tie breaker! Good Luck!')}
-    else if (cpuScore > 2) {alert('Unlucky! The computer has won this game'); i=1;}
-    else if (p1Score > 2) {alert('Well done! You have won this game'); i=1;}
-    i--;
-  }*/
-
-
 function playRound() {
-	// use EventListeners for user input
-	// logic for win permutations
-	// indication of winner
-	// track scores
+  // logic for win permutations
+  // indication of winner
+  // track scores
 
-	cpuPlayer();
-	
- //  playerChoice = prompt("Pick Rock, Paper or Scissors");
-	// playerChoice = playerChoice.toLowerCase();
+  cpuPlayer();
 
+  if (playerChoice === cpuChoice) {alert('Draw! Both players chose ' + playerChoice);
+    p1Score++; cpuScore++;}
+  else if (playerChoice.includes('ock') && cpuChoice.includes('ors'))
+  {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
+  else if (playerChoice.includes('ors') && cpuChoice.includes('per'))
+  {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
+  else if (playerChoice.includes('per') && cpuChoice.includes('ock'))
+  {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
+  else {alert('Computer wins! ' + cpuChoice + ' beats ' + playerChoice); cpuScore++}
 
-	if (playerChoice === cpuChoice) {alert("Draw! Both players chose " + playerChoice); p1Score++; cpuScore++;}
-	else if (playerChoice.includes('ock') && cpuChoice.includes('ors')) {alert("Player wins! " + playerChoice + " beats " + cpuChoice); p1Score++}
-	else if (playerChoice.includes('ors') && cpuChoice.includes('per')) {alert("Player wins! " + playerChoice + " beats " + cpuChoice); p1Score++}
-	else if (playerChoice.includes('per') && cpuChoice.includes('ock')) {alert("Player wins! " + playerChoice + " beats " + cpuChoice); p1Score++}
-		else {alert("Computer wins! " + cpuChoice + " beats " + playerChoice); cpuScore++}
-
-
+  if (cpuScore === p1Score) {alert('Are you even trying?!?')}
+  else if (cpuScore > p1Score + 2) {alert('You\'re gettin\' a whupping, boy!')}
+  else if (p1Score > cpuScore + 2) {alert('G\'awn the wee man!!! Kick its ass!')}
 }
+
