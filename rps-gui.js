@@ -1,5 +1,7 @@
 //  https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation
 
+const commentary = document.querySelector('#comment')
+
 let cpuChoice = '';
 let p1Score = 0;
 let cpuScore = 0;
@@ -17,7 +19,6 @@ Array.from(weapons).forEach((weapon) => {
 
 
 function cpuPlayer() {
-  // need to generate rock, paper or scissors
   // use Math.random to generate a number 1-3
   // use switch cases to return choice
 
@@ -53,8 +54,8 @@ function playRound() {
   {alert('Player wins! ' + playerChoice + ' beats ' + cpuChoice); p1Score++}
   else {alert('Computer wins! ' + cpuChoice + ' beats ' + playerChoice); cpuScore++}
 
-  if (cpuScore === p1Score) {alert('Are you even trying?!?')}
-  else if (cpuScore > p1Score + 2) {alert('You\'re gettin\' a whupping, boy!')}
-  else if (p1Score > cpuScore + 2) {alert('G\'awn the wee man!!! Kick its ass!')}
+  if (cpuScore === p1Score) {commentary.textContent = 'Are you even trying!?'}
+  else if (cpuScore > p1Score + 2) {commentary.textContent = 'You\'re gettin\' an ass whuppin\', boy!'}
+  else if (p1Score > cpuScore + 1) {commentary.textContent = 'G\'awn wee man!!! Kick its ass!'}
 }
 

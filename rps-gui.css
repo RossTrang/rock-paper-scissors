@@ -8,9 +8,12 @@ body  {
         ".  gameboard gameboard gameboard ."
         ".  scores  scores  scores  .";
   justify-content: center;
+  font-family: 'Press Start 2P', cursive;
+  color: lawngreen;
+  background-color: black;
       }
 
-h1  {
+h2  {
   grid-area: header;
   justify-self: center;
 }
@@ -23,6 +26,7 @@ div {
   grid-area: instructions;
   justify-self: center;
   align-self: start;
+  font-size: 0.80em;
 }
 
 .gameboard {
@@ -49,17 +53,22 @@ div {
 .scores {
   grid-area: scores;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+#comment {
+  grid-column: span 5;
+  justify-self: center;
 }
 
 #playerScore {
-justify-self: start;}
-
-#comment {
-  justify-self: center;}
+justify-self: start;
+grid-column-start: 1;
+}
 
 #pcScore {
   justify-self: end;
+  grid-column-start: 5;
 }
 
 .roundResult {
