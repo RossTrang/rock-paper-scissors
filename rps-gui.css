@@ -1,0 +1,67 @@
+body  {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: [header-start] 1fr [instructions-start] auto [gameboard-start] 3fr [scores-start] 1fr;
+  grid-template-areas: 
+        ".  header  header  header  ."
+        ".  instructions  instructions  instructions  ."
+        ".  gameboard gameboard gameboard ."
+        ".  scores  scores  scores  .";
+  justify-content: center;
+      }
+
+h1  {
+  grid-area: header;
+  justify-self: center;
+}
+
+div {
+  border: 2px silver dotted;
+}
+
+.instructions {
+  grid-area: instructions;
+  justify-self: center;
+  align-self: start;
+}
+
+.gameboard {
+  grid-area: gameboard;
+  display: grid;
+  grid-template-areas:
+        ".  rock  paper scissors  .";
+  align-content: space-around;
+  grid-gap: 20px;
+}
+
+#rock {
+  grid-area: rock;
+}
+
+#paper {
+  grid-area: paper;
+}
+
+#scissors {
+  grid-area: scissors;
+}
+
+.scores {
+  grid-area: scores;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#playerScore {
+justify-self: start;}
+
+#comment {
+  justify-self: center;}
+
+#pcScore {
+  justify-self: end;
+}
+
+.roundResult {
+  display: none;
+}

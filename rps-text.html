@@ -48,9 +48,7 @@
 				playerChoice = playerChoice.toLowerCase();
 
 
-				if (playerChoice.includes('ock') && cpuChoice.includes('ock')) {alert("Draw! Both players chose " + playerChoice); p1Score++; cpuScore++;}
-				else if (playerChoice.includes('per') && cpuChoice.includes('per')) {alert("Draw! Both players chose " + playerChoice); p1Score++; cpuScore++;}
-				else if (playerChoice.includes('ors') && cpuChoice.includes('ors')) {alert("Draw! Both players chose " + playerChoice); p1Score++; cpuScore++;}
+				if (playerChoice === cpuChoice) {alert("Draw! Both players chose " + playerChoice); p1Score++; cpuScore++;}
 				else if (playerChoice.includes('ock') && cpuChoice.includes('ors')) {alert("Player wins! " + playerChoice + " beats " + cpuChoice); p1Score++}
 				else if (playerChoice.includes('ors') && cpuChoice.includes('per')) {alert("Player wins! " + playerChoice + " beats " + cpuChoice); p1Score++}
 				else if (playerChoice.includes('per') && cpuChoice.includes('ock')) {alert("Player wins! " + playerChoice + " beats " + cpuChoice); p1Score++}
