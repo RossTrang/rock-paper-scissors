@@ -43,6 +43,10 @@ img {
         "rock paper scissors";
 }
 
+.weapon:hover {
+  transform: scale(1.2);
+}
+
 #rock {
   grid-area: rock;
 }
