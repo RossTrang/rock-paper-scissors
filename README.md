@@ -1,4 +1,6 @@
 # rock-paper-scissors
+[Live Demo](https://rawgit.com/RossTrang/rock-paper-scissors/master/rps-gui.html)
+
 The Odin Project - Rock, Paper, Scissors game
 
 https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors
