@@ -68,11 +68,11 @@ function playRound() {
   pcScore.textContent = 'CPU : ' + cpuScore;
 
   if (cpuScore === p1Score) {commentary.textContent = 'Are you even trying!?'}
-  else if (cpuScore > p1Score + 2) {commentary.textContent = 'You\'re gettin\' an ass whuppin\', boy!'}
-  else if (p1Score > cpuScore + 1) {commentary.textContent = 'G\'awn wee man!!! Kick its ass!'}
+  else if (cpuScore > p1Score + 2) {commentary.textContent = 'You gotta do better than that!'}
+  else if (p1Score > cpuScore + 1) {commentary.textContent = 'Get wrecked!'}
   else {commentary.textContent = 'Fight! Fight! Fight!';}
 
-  if (cpuScore === 5) {result.textContent = 'GAME OVER... pussy.'; result.onclick = () => {
+  if (cpuScore === 5) {result.textContent = 'GAME OVER... thermodynamic nuclear war instead?'; result.onclick = () => {
     window.location.reload(false)
   }}
   else if (p1Score === 5) {result.textContent = 'GAME OVER. Are you John Connor?'; result.onclick = () => {
