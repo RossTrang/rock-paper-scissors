@@ -45,6 +45,7 @@ img {
 
 .weapon:hover {
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 #rock {
